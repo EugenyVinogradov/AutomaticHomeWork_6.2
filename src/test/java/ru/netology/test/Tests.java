@@ -27,6 +27,7 @@ public class Tests {
         var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         var cardsPage = verificationPage.cardsPage(verificationCode);
         cardsPage.isPageExist();
+        sleep(1000);
         int balanceFirstCard = Integer.parseInt(cardsPage.returnFirstCardBalance());
         int balanceSecondCard = Integer.parseInt(cardsPage.returnSecondCardBalance());
         var transferPage = cardsPage.depositAction(cardsPage.selectFirstCardButton());
