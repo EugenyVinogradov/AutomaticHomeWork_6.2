@@ -1,4 +1,4 @@
-package ru.netology.data;
+package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.dataHelper.DataHelper;
@@ -11,6 +11,7 @@ public class VerificationPage {
     private SelenideElement loginButton = $("[data-test-id=action-verify]");
     private SelenideElement emptyCode = $x("//*[text()='Неверно указан код! Попробуйте ещё раз.']");
     private SelenideElement wrongCode = $x("//*[text()='Поле обязательно для заполнения']");
+
     public CardsPage cardsPage(DataHelper.VerificationCode code) {
         verifyCode.setValue(code.getCode());
         loginButton.click();

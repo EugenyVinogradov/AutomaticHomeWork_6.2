@@ -1,7 +1,6 @@
-package ru.netology.data;
+package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
-import ru.netology.dataHelper.DataHelper;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -21,21 +20,21 @@ public class CardsPage {
         return exist;
     }
 
-    public SelenideElement selectFirstCardButton() {
-        return firstCardButton;
-    }
-    public SelenideElement selectSecondCardButton() {
-        return secondCardButton;
+
+    public TransfersPage depositActionFirstCard() {
+        firstCardButton.click();
+        return new TransfersPage();
     }
 
-    public TransfersPage depositAction(SelenideElement button) {
-        button.click();
+    public TransfersPage depositActionSecondCard() {
+        secondCardButton.click();
         return new TransfersPage();
     }
 
     public SelenideElement getFirstCardInfo() {
         return firstCardInfo;
     }
+
     public SelenideElement getSecondCardInfo() {
         return secondCardInfo;
     }
@@ -44,6 +43,7 @@ public class CardsPage {
         String str = getFirstCardInfo().toString();
         return str.substring(86, str.length() - 19);
     }
+
     public String returnSecondCardBalance() {
         String str = getSecondCardInfo().toString();
         return str.substring(86, str.length() - 19);

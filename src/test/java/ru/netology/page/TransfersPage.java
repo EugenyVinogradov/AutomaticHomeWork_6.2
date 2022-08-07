@@ -1,5 +1,6 @@
-package ru.netology.data;
+package ru.netology.page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -12,13 +13,21 @@ public class TransfersPage {
     private SelenideElement transferTo = $("[data-test-id=to]");
     private SelenideElement actionButton = $("[data-test-id=action-transfer].button");
     private SelenideElement chancelButton = $("[data-test-id=action-cancel].button");
+    private SelenideElement errorNotEnoughMoney = $x("//*[text() = 'Ошибка! Недостаточно средств для проведения операции!'");
+    private SelenideElement errorEnterSumAmount = $x("//*[text() = 'Введите сумму перевода'");
 
 
-    public boolean isPageExist() {
-        boolean exist = heading.isDisplayed();
-        return exist;
+    public void isPageExist() {
+        heading.shouldBe(Condition.visible);
     }
-    public CardsPage transfer (int sum, String cardNumber) {
+    public void errorNotEnoughMoney() {
+        errorNotEnoughMoney.shouldBe(Condition.visible);
+    }
+    public void errorEnterSumAmount() {
+        errorEnterSumAmount.shouldBe(Condition.visible);
+    }
+
+    public CardsPage transfer(String sum, String cardNumber) {
         amount.setValue(String.valueOf(sum));
         transferFrom.setValue(cardNumber);
         actionButton.click();
