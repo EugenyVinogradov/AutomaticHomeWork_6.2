@@ -64,31 +64,31 @@ public class Tests {
         Assertions.assertEquals(expected1, actual1);
         Assertions.assertEquals(expected2, actual2);
     }
-    @Test
-    void shouldNotTransferFromSecondCardToFirstIfNotEnoughMoney() {
-        var authPage = new AuthPage();
-        var authInfo = DataHelper.getAuthInfo();
-        var verificationPage = authPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
-        var cardsPage = verificationPage.cardsPage(verificationCode);
-        cardsPage.getSecondCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
-        var transferPage = cardsPage.depositActionSecondCard();
-        transferPage.isPageExist();
-        transferPage.transfer(sumTransferMoreBalance, DataHelper.getFirstCardsInfo().getCardNumber());
-        transferPage.errorNotEnoughMoney();
-    }
-    @Test
-    void shouldNotTransferFromSecondCardToFirstIfNotSumMoney() {
-        var authPage = new AuthPage();
-        var authInfo = DataHelper.getAuthInfo();
-        var verificationPage = authPage.validLogin(authInfo);
-        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
-        var cardsPage = verificationPage.cardsPage(verificationCode);
-        cardsPage.getSecondCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
-        var transferPage = cardsPage.depositActionSecondCard();
-        transferPage.isPageExist();
-        transferPage.transfer("", DataHelper.getFirstCardsInfo().getCardNumber());
-        transferPage.errorEnterSumAmount();
-    }
+//    @Test
+//    void shouldNotTransferFromSecondCardToFirstIfNotEnoughMoney() {
+//        var authPage = new AuthPage();
+//        var authInfo = DataHelper.getAuthInfo();
+//        var verificationPage = authPage.validLogin(authInfo);
+//        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+//        var cardsPage = verificationPage.cardsPage(verificationCode);
+//        cardsPage.getSecondCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
+//        var transferPage = cardsPage.depositActionSecondCard();
+//        transferPage.isPageExist();
+//        transferPage.transfer(sumTransferMoreBalance, DataHelper.getFirstCardsInfo().getCardNumber());
+//        transferPage.errorNotEnoughMoney();
+//    }
+//    @Test
+//    void shouldNotTransferFromSecondCardToFirstIfNotSumMoney() {
+//        var authPage = new AuthPage();
+//        var authInfo = DataHelper.getAuthInfo();
+//        var verificationPage = authPage.validLogin(authInfo);
+//        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+//        var cardsPage = verificationPage.cardsPage(verificationCode);
+//        cardsPage.getSecondCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
+//        var transferPage = cardsPage.depositActionSecondCard();
+//        transferPage.isPageExist();
+//        transferPage.transfer("", DataHelper.getFirstCardsInfo().getCardNumber());
+//        transferPage.errorEnterSumAmount();
+//    }
 
 }
