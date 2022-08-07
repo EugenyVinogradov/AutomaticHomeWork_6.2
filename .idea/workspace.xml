@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2eeed7cf-c4bd-40f6-8e02-6ee4908de37d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/AuthPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/page/AuthPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/CardsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/page/CardsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/TransfersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/page/TransfersPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/data/VerificationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/page/VerificationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/dataHelper/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/dataHelper/DataHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/test/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/test/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/vinogradov/OneDrive/Learning/Testing/4.AutomaticTesting/Homeworks/4&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Tests.shouldNotTransferFromSecondCardToFirstIfNotSumMoney">
+  <component name="RunManager" selected="Gradle.Tests (1)">
     <configuration name="Tests (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -197,10 +192,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests (1)" />
         <item itemvalue="Gradle.Tests.shouldNotTransferFromSecondCardToFirstIfNotSumMoney" />
         <item itemvalue="Gradle.Tests.shouldNotTransferFromSecondCardToFirstIfNotEnoughMoney" />
         <item itemvalue="Gradle.Tests.shouldTransferFromFirstCardToSecondCardCardsOk" />
-        <item itemvalue="Gradle.Tests (1)" />
         <item itemvalue="Gradle.Tests.shouldTransferFromSecondCardToFirstCardCardsOk" />
       </list>
     </recent_temporary>
