@@ -13,8 +13,8 @@ public class TransfersPage {
     private SelenideElement transferTo = $("[data-test-id=to]");
     private SelenideElement actionButton = $("[data-test-id=action-transfer].button");
     private SelenideElement chancelButton = $("[data-test-id=action-cancel].button");
-    private SelenideElement errorNotEnoughMoney = $x("//*[text() = 'Ошибка! Недостаточно средств для проведения операции!'");
-    private SelenideElement errorEnterSumAmount = $x("//*[text() = 'Введите сумму перевода'");
+    private SelenideElement errorNotEnoughMoney = $x("//*[text() = 'Ошибка! Недостаточно средств для проведения операции!']");
+    private SelenideElement errorEnterSumAmount = $x("//*[text() = 'Введите сумму перевода']");
 
 
     public void isPageExist() {
