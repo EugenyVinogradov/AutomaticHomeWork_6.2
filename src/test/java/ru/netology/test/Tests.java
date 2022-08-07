@@ -73,7 +73,7 @@ public class Tests {
         var cardsPage = verificationPage.cardsPage(verificationCode);
         cardsPage.getSecondCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
         var transferPage = cardsPage.depositActionSecondCard();
-//        transferPage.isPageExist();
+        transferPage.isPageExist();
         transferPage.transfer(sumTransferMoreBalance, DataHelper.getFirstCardsInfo().getCardNumber());
         transferPage.errorNotEnoughMoney();
     }
@@ -86,7 +86,7 @@ public class Tests {
         var cardsPage = verificationPage.cardsPage(verificationCode);
         cardsPage.getSecondCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
         var transferPage = cardsPage.depositActionSecondCard();
-//        transferPage.isPageExist();
+        transferPage.isPageExist();
         transferPage.transfer("", DataHelper.getFirstCardsInfo().getCardNumber());
         transferPage.errorEnterSumAmount();
     }
