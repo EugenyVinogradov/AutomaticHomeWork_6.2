@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2eeed7cf-c4bd-40f6-8e02-6ee4908de37d" name="Changes" comment="" />
+    <list default="true" id="2eeed7cf-c4bd-40f6-8e02-6ee4908de37d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/page/TransfersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/page/TransfersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/test/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/test/Tests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +99,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests.shouldNotTransferFromSecondCardToFirstIfNotEnoughMoney" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests.checkButtonUpdateBalance" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -108,7 +112,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.test.Tests.shouldNotTransferFromSecondCardToFirstIfNotEnoughMoney&quot;" />
+            <option value="&quot;ru.netology.test.Tests.checkButtonUpdateBalance&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -118,7 +122,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests.shouldNotTransferFromSecondCardToFirstIfNotSumMoney" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests.shouldNotTransferFromSecondCardToFirstIfSumTransferIsNotValidValue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -131,7 +135,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.test.Tests.shouldNotTransferFromSecondCardToFirstIfNotSumMoney&quot;" />
+            <option value="&quot;ru.netology.test.Tests.shouldNotTransferFromSecondCardToFirstIfSumTransferIsNotValidValue&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests.shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotInteger" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.test.Tests.shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotInteger&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,36 +191,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests.shouldTransferFromSecondCardToFirstCardCardsOk" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.netology.test.Tests.shouldTransferFromSecondCardToFirstCardCardsOk&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests (1)" />
-        <item itemvalue="Gradle.Tests.shouldNotTransferFromSecondCardToFirstIfNotSumMoney" />
-        <item itemvalue="Gradle.Tests.shouldNotTransferFromSecondCardToFirstIfNotEnoughMoney" />
+        <item itemvalue="Gradle.Tests.shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotInteger" />
         <item itemvalue="Gradle.Tests.shouldTransferFromFirstCardToSecondCardCardsOk" />
-        <item itemvalue="Gradle.Tests.shouldTransferFromSecondCardToFirstCardCardsOk" />
+        <item itemvalue="Gradle.Tests.checkButtonUpdateBalance" />
+        <item itemvalue="Gradle.Tests.shouldNotTransferFromSecondCardToFirstIfSumTransferIsNotValidValue" />
       </list>
     </recent_temporary>
   </component>

@@ -14,7 +14,8 @@ public class TransfersPage {
     private SelenideElement actionButton = $("[data-test-id=action-transfer].button");
     private SelenideElement chancelButton = $("[data-test-id=action-cancel].button");
     private SelenideElement errorNotEnoughMoney = $x("//*[text() = 'Ошибка! Недостаточно средств для проведения операции!']");
-    private SelenideElement errorEnterSumAmount = $x("//*[text() = 'Введите сумму перевода']");
+    private SelenideElement errorEnterSumAmount = $x("//*[text() = 'Введите сумму перевода больше нуля']");
+    private SelenideElement errorNotValidValue = $x("//*[text() = 'Ошибка! Можно вводить только цифры!']");
 
 
     public void isPageExist() {
@@ -25,6 +26,9 @@ public class TransfersPage {
     }
     public void errorEnterSumAmount() {
         errorEnterSumAmount.shouldBe(Condition.visible);
+    }
+    public void errorNotValidValue() {
+        errorNotValidValue.shouldBe(Condition.visible);
     }
 
     public CardsPage transfer(String sum, String cardNumber) {
