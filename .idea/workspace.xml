@@ -6,13 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="2eeed7cf-c4bd-40f6-8e02-6ee4908de37d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/page/TransfersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/page/TransfersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/dataHelper/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/dataHelper/DataHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/page/CardsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/page/CardsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/test/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/test/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -63,19 +67,34 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="2Clb8K8TLUVg9hkrDsW432uPt29" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_directory_selection&quot;: &quot;C:/Users/vinogradov/OneDrive/Learning/Testing/4.AutomaticTesting/Homeworks/6/Homework_6.1/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vinogradov/OneDrive/Learning/Testing/4.AutomaticTesting/Homeworks/4&quot;
-  }
-}</component>
-  <component name="RunManager" selected="Gradle.Tests (1)">
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Gradle.Tests.shouldTransferFromFirstCardToSecondCardCardsOk">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.netology.page.Main" />
+      <module name="Homework_6.1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.netology.page.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -99,7 +118,30 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests.checkButtonUpdateBalance" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests.check" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.test.Tests.check&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests.checkButtonUpdateBalance (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -113,52 +155,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ru.netology.test.Tests.checkButtonUpdateBalance&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests.shouldNotTransferFromSecondCardToFirstIfSumTransferIsNotValidValue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.netology.test.Tests.shouldNotTransferFromSecondCardToFirstIfSumTransferIsNotValidValue&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests.shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotInteger" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.netology.test.Tests.shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotInteger&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests (1)" />
-        <item itemvalue="Gradle.Tests.shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotInteger" />
         <item itemvalue="Gradle.Tests.shouldTransferFromFirstCardToSecondCardCardsOk" />
-        <item itemvalue="Gradle.Tests.checkButtonUpdateBalance" />
-        <item itemvalue="Gradle.Tests.shouldNotTransferFromSecondCardToFirstIfSumTransferIsNotValidValue" />
+        <item itemvalue="Gradle.Tests (1)" />
+        <item itemvalue="Gradle.Tests.checkButtonUpdateBalance (1)" />
+        <item itemvalue="Gradle.Tests.check" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>

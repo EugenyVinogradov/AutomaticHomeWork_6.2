@@ -1,12 +1,18 @@
 package ru.netology.page;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import ru.netology.dataHelper.DataHelper;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 
 
 public class CardsPage {
-    private SelenideElement heading = $x("//*[text()='Поле обязательно для заполнения']");
+    private SelenideElement heading = $x("//*[text()='Ваши карты']");
+    private ElementsCollection cards = $$(".list__item div");
 
     private SelenideElement firstCardInfo = $("[data-test-id='92df3f1c-a033-48e6-8390-206f6b1f56c0']");
     private SelenideElement firstCardButton = $("[data-test-id='92df3f1c-a033-48e6-8390-206f6b1f56c0'] button");
@@ -15,9 +21,8 @@ public class CardsPage {
     private SelenideElement updateButton = $("[data-test-id=action-reload]");
 
 
-    public boolean isPageExist() {
-        boolean exist = heading.isDisplayed();
-        return exist;
+    public void isPageExist() {
+        heading.shouldBe(Condition.visible, Duration.ofSeconds(10));
     }
 
 
@@ -39,10 +44,26 @@ public class CardsPage {
         return secondCardInfo;
     }
 
+    public String getCardBalance(String id) {
+        for (SelenideElement card : cards) {
+            if (card.getAttribute("data-test-id").equals(id)) {
+                String balance = card.getText().split(":")[1].split("р")[0].trim();
+                return balance;
+            }
+            throw new RuntimeException("ID карты " + id + " не найден!");
+        }
+        return null;
+    }
+
+    public String  ddd() {
+        return cards.get(1).getAttribute("data-test-id");
+    }
+
     public String returnFirstCardBalance() {
         String str = getFirstCardInfo().toString();
         return str.substring(86, str.length() - 19);
     }
+
 
     public String returnSecondCardBalance() {
         String str = getSecondCardInfo().toString();

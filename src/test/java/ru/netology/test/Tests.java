@@ -15,12 +15,14 @@ import static com.codeborne.selenide.Selenide.open;
 public class Tests {
 
     @BeforeEach
+
     void setup() {
         open("http://localhost:9999");
     }
 
     String sumTransfer = "5000";
-    String sumTransferIsNotInteger = "9999.99";
+    String sumTransferIsNotIntegerDigitAmountMoreDigitBalance = "9999.99";
+    String sumTransferIsNotIntegerDigitAmountEqualDigitBalance = "999.99";
     String sumTransferMoreBalance = "100000";
     String sumTransferIsEmpty = "";
     String sumTransferIsNull = "0";
@@ -35,16 +37,16 @@ public class Tests {
         var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         var cardsPage = verificationPage.cardsPage(verificationCode);
         cardsPage.getFirstCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
-        float balanceFirstCard = Float.parseFloat(cardsPage.returnFirstCardBalance());
-        float balanceSecondCard = Float.parseFloat(cardsPage.returnSecondCardBalance());
+        float balanceFirstCard = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
+        float balanceSecondCard = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getSecondCardsInfo().getCardId()));
         var transferPage = cardsPage.depositActionFirstCard();
         transferPage.isPageExist();
         transferPage.transfer(sumTransfer, DataHelper.getSecondCardsInfo().getCardNumber());
         cardsPage.isPageExist();
         float expected1 = balanceFirstCard + Float.parseFloat(sumTransfer);
         float expected2 = balanceSecondCard - Float.parseFloat(sumTransfer);
-        float actual1 = Float.parseFloat(cardsPage.returnFirstCardBalance());
-        float actual2 = Float.parseFloat(cardsPage.returnSecondCardBalance());
+        float actual1 = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
+        float actual2 = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getSecondCardsInfo().getCardId()));
         Assertions.assertEquals(expected1, actual1);
         Assertions.assertEquals(expected2, actual2);
     }
@@ -56,7 +58,7 @@ public class Tests {
         var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         var cardsPage = verificationPage.cardsPage(verificationCode);
         cardsPage.getSecondCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
-        float balanceFirstCard = Float.parseFloat(cardsPage.returnFirstCardBalance());
+        float balanceFirstCard = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
         float balanceSecondCard = Float.parseFloat(cardsPage.returnSecondCardBalance());
         var transferPage = cardsPage.depositActionSecondCard();
         transferPage.isPageExist();
@@ -64,28 +66,49 @@ public class Tests {
         cardsPage.isPageExist();
         float expected1 = balanceFirstCard - Float.parseFloat(sumTransfer);
         float expected2 = balanceSecondCard + Float.parseFloat(sumTransfer);
-        float actual1 = Float.parseFloat(cardsPage.returnFirstCardBalance());
+        float actual1 = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
         float actual2 = Float.parseFloat(cardsPage.returnSecondCardBalance());
         Assertions.assertEquals(expected1, actual1);
         Assertions.assertEquals(expected2, actual2);
     }
     @Test
-    void shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotInteger() {
+    void shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotIntegerDigitAmountMoreDigitBalance() {
         var authPage = new AuthPage();
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = authPage.validLogin(authInfo);
         var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         var cardsPage = verificationPage.cardsPage(verificationCode);
         cardsPage.getFirstCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
-        float balanceFirstCard = Float.parseFloat(cardsPage.returnFirstCardBalance());
+        float balanceFirstCard = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
         float balanceSecondCard = Float.parseFloat(cardsPage.returnSecondCardBalance());
         var transferPage = cardsPage.depositActionFirstCard();
         transferPage.isPageExist();
-        transferPage.transfer(sumTransferIsNotInteger, DataHelper.getSecondCardsInfo().getCardNumber());
+        transferPage.transfer(sumTransferIsNotIntegerDigitAmountMoreDigitBalance, DataHelper.getSecondCardsInfo().getCardNumber());
         cardsPage.isPageExist();
-        float expected1 = balanceFirstCard + Float.parseFloat(sumTransferIsNotInteger);
-        float expected2 = balanceSecondCard - Float.parseFloat(sumTransferIsNotInteger);
-        float actual1 = Float.parseFloat(cardsPage.returnFirstCardBalance());
+        float expected1 = balanceFirstCard + Float.parseFloat(sumTransferIsNotIntegerDigitAmountMoreDigitBalance);
+        float expected2 = balanceSecondCard - Float.parseFloat(sumTransferIsNotIntegerDigitAmountMoreDigitBalance);
+        float actual1 = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
+        float actual2 = Float.parseFloat(cardsPage.returnSecondCardBalance());
+        Assertions.assertEquals(expected1, actual1);
+        Assertions.assertEquals(expected2, actual2);
+    }
+    @Test
+    void shouldTransferFromFirstCardToSecondCardCardsIfSumTransferIsNotIntegerDigitAmountEqualDigitBalance() {
+        var authPage = new AuthPage();
+        var authInfo = DataHelper.getAuthInfo();
+        var verificationPage = authPage.validLogin(authInfo);
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+        var cardsPage = verificationPage.cardsPage(verificationCode);
+        cardsPage.getFirstCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
+        float balanceFirstCard = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
+        float balanceSecondCard = Float.parseFloat(cardsPage.returnSecondCardBalance());
+        var transferPage = cardsPage.depositActionFirstCard();
+        transferPage.isPageExist();
+        transferPage.transfer(sumTransferIsNotIntegerDigitAmountEqualDigitBalance, DataHelper.getSecondCardsInfo().getCardNumber());
+        cardsPage.isPageExist();
+        float expected1 = balanceFirstCard + Float.parseFloat(sumTransferIsNotIntegerDigitAmountEqualDigitBalance);
+        float expected2 = balanceSecondCard - Float.parseFloat(sumTransferIsNotIntegerDigitAmountEqualDigitBalance);
+        float actual1 = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
         float actual2 = Float.parseFloat(cardsPage.returnSecondCardBalance());
         Assertions.assertEquals(expected1, actual1);
         Assertions.assertEquals(expected2, actual2);
@@ -164,12 +187,24 @@ public class Tests {
         var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         var cardsPage = verificationPage.cardsPage(verificationCode);
         cardsPage.getSecondCardInfo().shouldBe(Condition.visible,Duration.ofSeconds(10));
-        float balanceFirstCard = Float.parseFloat(cardsPage.returnFirstCardBalance());
-        float balanceSecondCard = Float.parseFloat(cardsPage.returnSecondCardBalance());
+        float balanceFirstCard = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
+        float balanceSecondCard = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getSecondCardsInfo().getCardId()));
         cardsPage.updateCardsInfo();
-        float actual1 = Float.parseFloat(cardsPage.returnFirstCardBalance());
-        float actual2 = Float.parseFloat(cardsPage.returnSecondCardBalance());
+        float actual1 = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getFirstCardsInfo().getCardId()));
+        float actual2 = Float.parseFloat(cardsPage.getCardBalance(DataHelper.getSecondCardsInfo().getCardId()));
         Assertions.assertEquals(balanceFirstCard, actual1);
         Assertions.assertEquals(balanceSecondCard, actual2);
+    }
+
+    @Test
+    void check() {
+        var authPage = new AuthPage();
+        var authInfo = DataHelper.getAuthInfo();
+        var verificationPage = authPage.validLogin(authInfo);
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+        var cardsPage = verificationPage.cardsPage(verificationCode);
+        cardsPage.getCardBalance("0f3f5c2a-249e-4c3d-8287-09f7a039391d");
+        System.out.println(cardsPage.getCardBalance("92df3f1c-a033-48e6-8390-206f6b1f56c0"));
+        System.out.println(cardsPage.ddd());
     }
 }
